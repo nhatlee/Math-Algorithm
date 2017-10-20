@@ -1,4 +1,13 @@
-//: Playground - noun: a place where people can play
+//: [Previous](@previous)
+
+
+//: Codewars challenge
+
+//: =========================
+
+//: ## Read the require of this challenge as below
+
+//: ### And please view and comment with my solution
 
 import UIKit
 
