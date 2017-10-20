@@ -4,6 +4,9 @@ import Foundation
 var str = "Hello, playground"
 
 //: [ListSquared](@next)
+//START here
+
+
 
 //XOR
 print(3&1) //= 1 => le & 1 = 1
