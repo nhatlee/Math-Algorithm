@@ -11,12 +11,8 @@ import Foundation
  dig_pow(695, 2) should return 2 since 6² + 9³ + 5⁴= 1390 = 695 * 2
  dig_pow(46288, 3) should return 51 since 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51
  */
-
-//precedencegroup PowerPrecedence { higherThan: MultiplicationPrecedence }
-//infix operator ^^ : PowerPrecedence
-//func ^^ (radix: Int, power: Int) -> Int {
-//    return Int(pow(Double(radix), Double(power)))
-//}
+ 
+//MARK: =====Normarl
 func digPow(for number: Int, using power: Int) -> Int {
     var _power = power
     let sum = String(number).characters.flatMap{ Int(String($0)) }.map{ value in
@@ -28,6 +24,7 @@ func digPow(for number: Int, using power: Int) -> Int {
 }
 print(digPow(for: 46288, using: 3))
 
+//MARK: =====better solution
 //func digPow(for number: Int, using power: Int) -> Int {
 //    let sum = String(number).characters.enumerated().reduce(0) {
 //        let number = Int(String($1.1))!
