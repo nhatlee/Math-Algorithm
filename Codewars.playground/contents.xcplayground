@@ -6,5 +6,6 @@
         <page name='DigPow'/>
         <page name='findOutlier'/>
         <page name='PrimeFactors'/>
+        <page name='Valid Braces'/>
     </pages>
 </playground>
