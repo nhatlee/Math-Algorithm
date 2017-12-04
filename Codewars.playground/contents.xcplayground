@@ -7,5 +7,6 @@
         <page name='findOutlier'/>
         <page name='PrimeFactors'/>
         <page name='Valid Braces'/>
+        <page name='find_missing'/>
     </pages>
 </playground>

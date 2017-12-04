@@ -69,13 +69,13 @@ PS: This is a sample question of the facebook engeneer challange on interviewstr
  Lấy số đầu tiên cộng số cuối cùng,nhân với số số hạng,cuối cùng chia đôi.Ví dụ :
  7+8+9+...+45 = (7+45)*39/2 = 1014.
  */
-func find_missing(l:[Int]) -> Int {
-    let sum = l.reduce(0, +)
-    return (l[0] + l[l.count-1]) * (l.count + 1) / 2 - sum
-}
+//func find_missing(l:[Int]) -> Int {
+//    let sum = l.reduce(0, +)
+//    return (l[0] + l[l.count-1]) * (l.count + 1) / 2 - sum
+//}
 
 //find_missing(l: [-13, -4])
-find_missing(l: [1,2,4])
+//find_missing(l: [1,2,4])
 //find_missing(l: [-1, -7, -10, -13, -16, -19, -22, -25, -28])
 //find_missing(l: [1, 2, 3, 4, 6, 7, 8, 9])
 //find_missing(l: [-1, 2, 5, 8, 11, 14, 17, 20, 26])
@@ -83,3 +83,57 @@ find_missing(l: [1,2,4])
 //find_missing(l: [12, 4, -4, -12, -20, -28, -44, -52, -60])
 //find_missing(l: [-13, 5, 14, 23, 32, 41, 50, 59, 68])
 
+
+
+
+///---------------------------------------------------------------------------
+/*
+ Preface
+ 
+ A prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+ 
+ A more detailed description of prime numbers can be found at: http://en.wikipedia.org/wiki/Prime_number
+ 
+ The Problem
+ 
+ You will need to create logic for the following two functions: isPrime(number) and getPrimes(start, finish)
+ 
+ isPrime(number)
+ 
+ Should return boolean true if prime, otherwise false
+ 
+ getPrimes(start, finish)
+ 
+ Should return a unique, sorted array of all primes in a given range (including the provided numbers, if they're prime). Note: start does not need to be the larger number.
+ 
+ Sample Input:
+ 
+ isPrime(number):
+ 
+ isPrime(0); // === false
+ isPrime(1); // === false
+ isPrime(2); // === true
+ isPrime(3); // === true
+ isPrime(4); // === false
+ isPrime(5); // === true
+ 
+ getPrimes(start, finish):
+ 
+ getPrimes(0, 0); // === []
+ getPrimes(0, 30); // === [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+ getPrimes(30, 0); // === [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+ */
+
+func isPrime(_ number: Int) -> Bool {
+    return number > 1 && !(2..<number).contains { number % $0 == 0 }
+}
+
+func getPrimes(_ start: Int, _ finish: Int) -> [Int]{
+    var _start = start
+    var _end = finish
+    if _start > _end {
+        swap(&_start, &_end)
+    }
+    return (_start..._end).filter{isPrime($0)}
+}
+print(getPrimes(30, 0))
